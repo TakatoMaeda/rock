@@ -3,19 +3,15 @@ puts "じゃんけん..."
 puts "1:グー , 2:チョキ , 3:パー , その他:やめる"
 
 cp_hand = {:グー=>1,:チョキ=>2,:パー=>3}
-
-
-
-
 hand_sign = gets.to_i
 cp_hand = rand(1..3)
 puts "自分#{hand_sign},相手:#{cp_hand}"
 
 case_pattern = ""
-
+ 
 if(hand_sign == cp_hand)
   case_pattern = "パターンA"
-  
+   
 elsif(hand_sign == 1 && cp_hand == 2)
   case_pattern = "パターンB"
 elsif(hand_sign == 2 && cp_hand == 3)
@@ -32,16 +28,15 @@ elsif(hand_sign == 3 && cp_hand == 2)
 else
 end
 
-
  case case_pattern
+ 
   when "パターンA"
-    puts "あいこです。ジャンケンを終了します。"
-    
-    
+    puts "あいこです。もう一回初めからしましょう！"
+    return janken
   when "パターンB"
     puts "あなたの勝ちです。あっちむいて..."
     puts "1 : 上 , 2 : 下 , 3 : 左 , 4 : 右"
-     
+ 
     cp_finger = {上:1,下:2,左:3,右:4}
     finger_sign = gets.to_i
     cp_finger = rand(1..4)
@@ -80,7 +75,6 @@ end
 　    else
 　      puts "危なかったですね。もう１回挑戦しましょう!"
 　   end
-　   
 　   
   else
     puts "ジャンケン終了"
